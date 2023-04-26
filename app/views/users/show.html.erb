@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @user.nome %>
-</p>
+ <div class="col-lg-7 form-group"> 
+          <label class = 'control-label'>Nome</label>
+          <input readonly="true" class = 'form-control' value="<%= @user.nome %>" />  
+      </div>
 
-<p>
-  <strong>Telefone:</strong>
-  <%= @user.telefone %>
-</p>
+ <div class="col-lg-5 form-group"> 
+          <label class = 'control-label'>Telefone</label>
+          <input readonly="true" class = 'form-control' value="<%= @user.telefone %>" />  
+      </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+                <div class="col-lg-7 form-group">  
+                  <%= link_to 'Alterar usuario', edit_user_path(@user), :class => "btn btn-primary colorprimarybtn" %>
+                  <%= link_to 'Voltar', user_path, :class => "btn btn-primary colorprimarybtn"%>
+                </div>
+    </div>
