@@ -10,7 +10,16 @@ class ProdutosController < ApplicationController
       @produtos = Produto.all.where("produtos.nome ILIKE  '%"+params[:nome].strip+"%'").order("produto.nome ASC").page(params[:page]).per(20)
     end
   end
-
+  def relatorio
+    @produtos = Produto.all
+    respond_to do |format|
+      format.pdf do
+          pdf = RelatorioPdf.new(@produtos, @view_context) 
+          send_data pdf.render,
+          filename: "relatorio.pdf", type: "application/pdf", disposition: "inline"
+      end 
+    end
+  end
   # GET /produtos/1 or /produtos/1.json
   def show
   end

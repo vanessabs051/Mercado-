@@ -15,7 +15,7 @@
   
       <div class="col-lg-4 form-group"> 
           <label class = 'control-label'>Validade</label>
-          <input readonly="true" class = 'form-control' value="<%= @produto.validade %>" />  
+          <input readonly="true" class = 'form-control' value="<%= @produto.data_validade %>" />  
       </div>
     
 
@@ -33,13 +33,13 @@
 
       <div class="col-lg-2 form-group"> 
           <label class = 'control-label'>Quantidade</label>
-          <input readonly="true" class = 'form-control' value="<%= @produto.quantidade %>" />  
+          <input readonly="true" class = 'form-control' value="<%= @produto.qtd %>" />  
       </div>
       
  
       <div class="col-lg-5 form-group"> 
           <label class = 'control-label'>Fornecedor</label>
-          <input readonly="true" class = 'form-control' value="<%= @produto.fornecedor %>" />  
+          <input readonly="true" class = 'form-control' value="<%= @produto.fornecedor.nome %>" />  
       </div>
       </div>
 <div class="row">
